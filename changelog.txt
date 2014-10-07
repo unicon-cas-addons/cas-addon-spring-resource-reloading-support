@@ -1,0 +1,6 @@
+CAS Addon Spring Resource Reloading Support
+===========================================
+
+Changes in version 1.0.0.RELEASE
+---------------------------------------------
+* Initial release
