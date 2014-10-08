@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cas-resource="http://unicon.net/schema/cas/spring-resource"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://unicon.net/schema/cas/spring-resource
+                           http://unicon.net/schema/cas/cas-addon-spring-resource.xsd ">
+
+
+    <cas-resource:change-detector id="testChangeDetector"
+                              watched-resource="classpath:/net/unicon/cas/addon/spring/resource/config/testResource.txt"/>
+
+</beans>
