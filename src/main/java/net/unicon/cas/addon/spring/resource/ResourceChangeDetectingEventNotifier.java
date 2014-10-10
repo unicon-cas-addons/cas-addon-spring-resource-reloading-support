@@ -10,6 +10,7 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.core.io.Resource;
+import org.springframework.scheduling.annotation.Scheduled;
 
 /**
  * A class responsible for detecting contents changes of configured resource (file, classpath, URL, etc.)
@@ -76,10 +77,11 @@ public class ResourceChangeDetectingEventNotifier implements ApplicationEventPub
         this.resourceSha1Hex = initialSha1Hex;
     }
 
-    /**
-     * Compare the SHA1 digests (since last check and the latest) of the configured resource, and if change is detected,
-     * publish the <code>ResourceChangeEvent</code> to ApplicationContext.
-     */
+   /**
+    * Compare the SHA1 digests (since last check and the latest) of the configured resource, and if change is detected,
+    * publish the <code>ResourceChangeEvent</code> to ApplicationContext.
+    */
+    @Scheduled(fixedDelay = 3000)
     public void notifyOfTheResourceChangeEventIfNecessary() {
         final String currentResourceSha1 = this.resourceSha1Hex;
         String newResourceSha1 = null;
