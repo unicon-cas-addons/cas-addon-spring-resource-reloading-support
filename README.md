@@ -7,4 +7,4 @@ Although the main reason for this library is to support various CAS addons needi
 this project does not carry any CAS specific bits and is generic enough to be used in other contexts, etc.
 
 ### Current version
-`1.0.0-RC1`
+`1.0.0-GA`
